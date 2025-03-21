@@ -8,7 +8,7 @@ const express = require('express'),
     app = express(),
     passportInit = require('./utils/passport-config'),
     {ensureAuthenticated, forwardAuthenticated} = require('./utils/authenticate'),
-    PORT = process.env.PORT || 5000
+    PORT = process.env.PORT || 3000
 
 const indexRouter = require('./routers/indexRouter'),
     loginRouter = require('./routers/loginRouter'),
