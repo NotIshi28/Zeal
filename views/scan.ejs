@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan</title>
+    <style>
+        .navbar {
+            display: none !important;
+        }
+        .heading {
+            display: flex;
+            flex-direction: row;
+            align-items: start;
+            gap: 4vw;
+        }
+        .text {
+            display: flex;
+            flex-direction: column;
+            color: #fff;
+        }
+        .text > h1, p {
+            margin: 0;
+        }
+        .heading > svg {
+            margin-top: 2.4vw;
+        }
+        .text > h1 {
+            color: #FFF;
+            font-size: 7vw;
+            font-style: normal;
+            font-weight: 800;
+        }
+        .text > p {
+            color: #FFF;
+            font-family: Outfit;
+            font-size: 3.5vw;
+            font-style: normal;
+            font-weight: 400;
+            opacity: 0.4;
+        }
+        .scan {
+            width: 100%;
+
+            margin-top: 18vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10vw;
+        }
+        
+        .photo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5vw;
+        }
+        .qr {
+            border-radius: 24px;
+            border: 1px solid #FFF;
+            
+            width: 70vw;
+            aspect-ratio: 1;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 2vw;
+        }
+        .button {
+            background: rgba(170, 170, 170, 0.14);
+            width: 12vw;
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 100px;
+        }
+        button {
+            border-radius: 52.047px;
+            background: #BFEB8D;
+
+            width: 45vw;
+            height: 10vw;
+            flex-shrink: 0;
+
+            font-family: Outfit;
+            font-size: 4vw;
+            outline: none;
+            border: none;
+        }
+
+        .recents {
+            /* position: absolute; */
+            width: 100vw;
+            margin-top: 10vw !important;
+            left: 0;
+            bottom: 0;
+            margin-left: -7vw !important;
+            
+            border-radius: 20px 20px 0px 0px;
+            background: rgba(214, 214, 214, 0.09);
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            /* align-items: center; */
+            justify-content: center;
+            padding: 4vw;
+
+            color: #FFF;
+        }
+        .members {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .recent > img {
+            border-radius: 47.286px;
+            background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+            
+            width: 15vw;
+            aspect-ratio: 1;
+        }
+        .recent > p {
+            color: #FFF;
+            text-align: center;
+            font-family: Outfit;
+            font-size: 9.276px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            opacity: 0.4;
+        }
+        .search {
+            width: 100%;
+            height: 13vw;
+            display: flex;
+            flex-direction: row;
+            border-radius: 12.393px;
+            align-items: center;
+            padding: 3vw;
+            gap: 2vw;
+            border: 0.6px solid #F9D44D;
+            background: #191919;
+        }
+        .search > p {
+            color: #9F9F9F;
+            font-family: Outfit;
+            font-size: 4vw;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+        .qr {
+            position: relative;
+        }
+        .qr video {
+            width: 90%;
+            height: 90%;
+            object-fit: cover;
+            position: absolute;
+            top: 3vw;
+            left: 3.5vw;
+            border-radius: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    
+    <div class="heading">
+        <svg onclick="window.history.back()" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.7102 9.00002L17.1324 14.4203C17.4921 14.78 17.6941 15.2678 17.6941 15.7764C17.6941 16.285 17.4921 16.7728 17.1324 17.1324C16.7728 17.4921 16.285 17.6941 15.7764 17.6941C15.2678 17.6941 14.78 17.4921 14.4203 17.1324L9.00002 11.7102L3.57968 17.1324C3.22004 17.4921 2.73225 17.6941 2.22364 17.6941C1.71503 17.6941 1.22724 17.4921 0.867599 17.1324C0.507954 16.7728 0.305908 16.285 0.305908 15.7764C0.305908 15.2678 0.507954 14.78 0.867599 14.4203L6.28985 9.00002L0.867599 3.57968C0.507954 3.22004 0.305908 2.73225 0.305908 2.22364C0.305908 1.71503 0.507954 1.22724 0.867599 0.867599C1.22724 0.507954 1.71503 0.305908 2.22364 0.305908C2.73225 0.305908 3.22004 0.507954 3.57968 0.867599L9.00002 6.28985L14.4203 0.867599C14.78 0.507954 15.2678 0.305908 15.7764 0.305908C16.285 0.305908 16.7728 0.507954 17.1324 0.867599C17.4921 1.22724 17.6941 1.71503 17.6941 2.22364C17.6941 2.73225 17.4921 3.22004 17.1324 3.57968L11.7102 9.00002Z" fill="#F9D44D"/>
+            </svg>
+        
+        <div class="text">
+            <h1>Scan and Pay</h1>
+            <p>UPI/Crypto</p>
+        </div>
+    </div>
+
+    <div class="scan">
+        <div class="photo">
+            <div class="qr">                
+            </div>
+            <div class="buttons">
+                <div class="button">
+                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.6" clip-path="url(#clip0_347_251)">
+                        <path d="M9.32667 8.74665L9.58067 8.75999C9.67443 8.76578 9.76834 8.75154 9.85617 8.7182C9.94399 8.68487 10.0237 8.6332 10.09 8.56665L11.504 7.15199L9.14734 4.79465L7.73267 6.20932C7.66609 6.27548 7.61435 6.35506 7.5809 6.44276C7.54745 6.53047 7.53305 6.62429 7.53867 6.71799L7.55267 6.97132L9.32734 8.74599L9.32667 8.74665ZM8.204 9.50865L6.79 8.09532L2.076 12.8087C1.95102 12.9337 1.88081 13.1032 1.88081 13.28C1.88081 13.4568 1.95102 13.6263 2.076 13.7513L2.54734 14.2233C2.67235 14.3483 2.84189 14.4185 3.01867 14.4185C3.19544 14.4185 3.36498 14.3483 3.49 14.2233L8.204 9.50865ZM6.79 5.26665L8.204 3.85332C8.32782 3.72945 8.47483 3.63119 8.63663 3.56415C8.79844 3.49711 8.97186 3.4626 9.147 3.4626C9.32214 3.4626 9.49557 3.49711 9.65737 3.56415C9.81917 3.63119 9.96618 3.72945 10.09 3.85332L12.4467 6.20999C12.6966 6.46002 12.8371 6.7991 12.8371 7.15265C12.8371 7.5062 12.6966 7.84528 12.4467 8.09532L11.0333 9.50865C10.8346 9.70796 10.596 9.86298 10.3331 9.96351C10.0702 10.0641 9.78901 10.1078 9.508 10.092L4.43334 15.1653C4.05828 15.5403 3.54966 15.7509 3.01934 15.7509C2.48901 15.7509 1.98039 15.5403 1.60534 15.1653L1.134 14.6947C0.948249 14.5089 0.8009 14.2884 0.700369 14.0458C0.599838 13.8031 0.548096 13.543 0.548096 13.2803C0.548096 13.0176 0.599838 12.7575 0.700369 12.5149C0.8009 12.2722 0.948249 12.0517 1.134 11.866L6.208 6.79199C6.19197 6.51092 6.2356 6.22964 6.33603 5.96663C6.43645 5.70362 6.59139 5.46485 6.79067 5.26599L6.79 5.26665ZM12.4467 5.26665C12.3217 5.14163 12.2515 4.9721 12.2515 4.79532C12.2515 4.61854 12.3217 4.449 12.4467 4.32399L13.8613 2.90999C13.9228 2.84631 13.9964 2.79552 14.0777 2.76058C14.1591 2.72565 14.2465 2.70725 14.3351 2.70649C14.4236 2.70572 14.5114 2.72258 14.5933 2.7561C14.6752 2.78963 14.7497 2.83913 14.8123 2.90172C14.8749 2.96432 14.9244 3.03875 14.9579 3.12068C14.9914 3.20261 15.0083 3.2904 15.0075 3.37892C15.0067 3.46744 14.9883 3.55492 14.9534 3.63626C14.9185 3.71759 14.8677 3.79115 14.804 3.85265L13.39 5.26665C13.3281 5.32864 13.2546 5.37781 13.1736 5.41136C13.0927 5.44491 13.0059 5.46218 12.9183 5.46218C12.8307 5.46218 12.744 5.44491 12.663 5.41136C12.5821 5.37781 12.5086 5.32864 12.4467 5.26665ZM13.6887 6.38265C13.666 6.29808 13.6602 6.20987 13.6716 6.12305C13.683 6.03624 13.7114 5.95252 13.7552 5.87669C13.7989 5.80085 13.8572 5.73438 13.9267 5.68107C13.9961 5.62776 14.0754 5.58865 14.16 5.56599L15.448 5.22065C15.5327 5.19756 15.6212 5.19143 15.7083 5.20261C15.7954 5.2138 15.8794 5.24208 15.9555 5.28583C16.0316 5.32958 16.0984 5.38795 16.1519 5.45756C16.2054 5.52718 16.2446 5.60669 16.2673 5.69151C16.29 5.77634 16.2958 5.86481 16.2842 5.95185C16.2726 6.03889 16.2439 6.12279 16.1998 6.19872C16.1557 6.27464 16.097 6.34111 16.0272 6.3943C15.9573 6.44749 15.8776 6.48635 15.7927 6.50865L14.5053 6.85399C14.4208 6.87667 14.3326 6.88247 14.2457 6.87106C14.1589 6.85965 14.0752 6.83125 13.9994 6.78748C13.9235 6.74372 13.8571 6.68544 13.8038 6.61597C13.7504 6.54651 13.7113 6.46723 13.6887 6.38265ZM11.0327 3.85265C10.9077 3.72763 10.8375 3.5581 10.8375 3.38132C10.8375 3.20454 10.9077 3.035 11.0327 2.90999L12.4467 1.49599C12.5717 1.37089 12.7413 1.30058 12.9181 1.30052C13.0949 1.30045 13.2646 1.37065 13.3897 1.49565C13.5148 1.62066 13.5851 1.79024 13.5851 1.96708C13.5852 2.14393 13.515 2.31356 13.39 2.43865L11.9753 3.85265C11.8503 3.97763 11.6808 4.04784 11.504 4.04784C11.3272 4.04784 11.1577 3.97763 11.0327 3.85265ZM9.91734 2.61132C9.83276 2.58865 9.75348 2.54955 9.68401 2.49624C9.61455 2.44293 9.55627 2.37646 9.5125 2.30062C9.46873 2.22478 9.44033 2.14106 9.42892 2.05425C9.41751 1.96744 9.42332 1.87922 9.446 1.79465L9.79067 0.506652C9.81334 0.422081 9.85245 0.342804 9.90577 0.273348C9.95908 0.203891 10.0256 0.145616 10.1014 0.101848C10.1772 0.058081 10.2609 0.029679 10.3477 0.0182638C10.4346 0.00684869 10.5228 0.012644 10.6073 0.0353189C10.6919 0.0579938 10.7712 0.0971043 10.8406 0.150417C10.9101 0.20373 10.9684 0.270201 11.0121 0.346036C11.0559 0.42187 11.0843 0.505583 11.0957 0.592394C11.1071 0.679205 11.1013 0.767414 11.0787 0.851986L10.734 2.13999C10.7113 2.22456 10.6722 2.30385 10.6189 2.37331C10.5656 2.44277 10.4991 2.50105 10.4233 2.54482C10.3475 2.58859 10.2637 2.61699 10.1769 2.6284C10.0901 2.63981 10.0019 2.634 9.91734 2.61132Z" fill="white"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_347_251">
+                        <rect width="16" height="16" fill="white" transform="translate(0.5)"/>
+                        </clipPath>
+                        </defs>
+                        </svg>                        
+                </div>
+
+                <div class="button">
+                    <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.5429 12.2648H14.5282C15.7374 12.2648 16.7177 11.2845 16.7177 10.0753V8.40921M6.5429 12.2648H3.47177C2.26258 12.2648 1.28235 11.2845 1.28235 10.0753V2.92477C1.28235 1.71559 2.26259 0.735352 3.47177 0.735352H14.5282C15.7374 0.735352 16.7177 1.71559 16.7177 2.92477V8.40921M6.5429 12.2648L10.1447 6.21062C10.9566 4.84585 12.8322 4.60174 13.9664 5.71319L16.7177 8.40921" stroke="white" stroke-opacity="0.7" stroke-width="0.980365"/>
+                        <circle cx="5.67686" cy="4.77189" r="2.08262" stroke="white" stroke-opacity="0.7" stroke-width="0.980365"/>
+                        </svg>
+                        
+                </div>
+
+                <div class="button">
+                    <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.6">
+                        <rect x="9.94995" y="3.75244" width="1.07385" height="2.98168" rx="0.536924" fill="white"/>
+                        <rect x="8.04211" y="4.82629" width="1.07385" height="2.98168" rx="0.536924" transform="rotate(-90 8.04211 4.82629)" fill="white"/>
+                        <rect width="1.07385" height="2.98168" rx="0.536924" transform="matrix(1 0 0 -1 9.94995 14.7571)" fill="white"/>
+                        <rect width="1.07385" height="2.98168" rx="0.536924" transform="matrix(0 1 1 0 8.04211 13.6832)" fill="white"/>
+                        <rect width="1.07385" height="2.98168" rx="0.536924" transform="matrix(-1 0 0 1 1.09314 3.75244)" fill="white"/>
+                        <rect width="1.07385" height="2.98168" rx="0.536924" transform="matrix(0 -1 -1 0 3.00098 4.82629)" fill="white"/>
+                        <rect x="1.09314" y="14.7571" width="1.07385" height="2.98168" rx="0.536924" transform="rotate(-180 1.09314 14.7571)" fill="white"/>
+                        <rect x="3.00098" y="13.6832" width="1.07385" height="2.98168" rx="0.536924" transform="rotate(90 3.00098 13.6832)" fill="white"/>
+                        <rect x="2.53456" y="6.26881" width="1.97795" height="1.97795" rx="0.988976" stroke="white" stroke-width="0.920924"/>
+                        <rect x="2.53456" y="10.2808" width="1.97795" height="1.97795" rx="0.988976" stroke="white" stroke-width="0.920924"/>
+                        <rect x="6.02551" y="9.77228" width="0.981168" height="0.981168" rx="0.490584" fill="white"/>
+                        <rect x="6.02551" y="11.7381" width="0.981168" height="0.981168" rx="0.490584" fill="white"/>
+                        <rect x="7.00671" y="10.7569" width="0.981168" height="0.981168" rx="0.490584" fill="white"/>
+                        <rect x="7.98792" y="10.7534" width="0.981168" height="0.981168" rx="0.490584" fill="white"/>
+                        <rect x="7.98792" y="11.7346" width="0.981168" height="0.981168" rx="0.490584" fill="white"/>
+                        <rect x="6.48597" y="6.26881" width="1.97795" height="1.97795" rx="0.988976" stroke="white" stroke-width="0.920924"/>
+                        <rect x="12.9069" y="0.243042" width="1.07385" height="2.98168" rx="0.536924" fill="white"/>
+                        <rect x="10.999" y="1.31689" width="1.07385" height="2.98168" rx="0.536924" transform="rotate(-90 10.999 1.31689)" fill="white"/>
+                        <rect width="1.07385" height="2.98168" rx="0.536924" transform="matrix(1 0 0 -1 12.9069 11.2476)" fill="white"/>
+                        <rect width="1.07385" height="2.98168" rx="0.536924" transform="matrix(0 1 1 0 10.999 10.1738)" fill="white"/>
+                        <rect width="1.07385" height="2.98168" rx="0.536924" transform="matrix(-1 0 0 1 4.05005 0.243042)" fill="white"/>
+                        <rect width="1.07385" height="2.98168" rx="0.536924" transform="matrix(0 -1 -1 0 5.95789 1.31689)" fill="white"/>
+                        </g>
+                        </svg>
+                        
+                </div>
+            </div>
+        </div>
+        <button onclick="alert('Coming Soon!')">Send</button>
+    </div>
+
+    <div class="recents">
+        <div class="search">
+            <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g opacity="0.7">
+                <path d="M7.139 12.0393C7.66752 12.0393 8.19086 11.9352 8.67915 11.7329C9.16743 11.5307 9.6111 11.2342 9.98482 10.8605C10.3585 10.4868 10.655 10.0431 10.8572 9.55482C11.0595 9.06653 11.1636 8.54319 11.1636 8.01467C11.1636 7.48615 11.0595 6.96281 10.8572 6.47452C10.655 5.98623 10.3585 5.54256 9.98482 5.16884C9.6111 4.79513 9.16743 4.49868 8.67915 4.29642C8.19086 4.09416 7.66752 3.99007 7.139 3.99007C6.07161 3.99007 5.04793 4.41408 4.29317 5.16884C3.53841 5.9236 3.11439 6.94728 3.11439 8.01467C3.11439 9.08206 3.53841 10.1057 4.29317 10.8605C5.04793 11.6153 6.07161 12.0393 7.139 12.0393ZM11.3782 11.3055L13.7796 13.7068C13.8436 13.7687 13.8947 13.8428 13.9298 13.9246C13.9648 14.0065 13.9833 14.0945 13.984 14.1836C13.9847 14.2727 13.9677 14.361 13.9339 14.4434C13.9001 14.5258 13.8502 14.6006 13.7872 14.6636C13.7242 14.7265 13.6493 14.7763 13.5668 14.8099C13.4844 14.8436 13.396 14.8605 13.307 14.8597C13.2179 14.8588 13.1299 14.8403 13.0481 14.8051C12.9663 14.7699 12.8923 14.7187 12.8305 14.6546L10.4291 12.2532C9.35083 13.0903 7.99409 13.4849 6.63509 13.3568C5.27608 13.2287 4.01698 12.5875 3.11409 11.5637C2.2112 10.54 1.7324 9.21061 1.77516 7.84625C1.81791 6.4819 2.37901 5.18512 3.34423 4.2199C4.30945 3.25468 5.60623 2.69358 6.97058 2.65083C8.33494 2.60807 9.66431 3.08688 10.6881 3.98976C11.7118 4.89265 12.353 6.15176 12.4811 7.51076C12.6092 8.86976 12.2146 10.2265 11.3776 11.3048L11.3782 11.3055Z" fill="#9F9F9F"/>
+                </g>
+                </svg>   
+            <p>Search</p>             
+        </div>
+
+        <h1>Recents</h1>
+
+        <div class="members">
+            <div class="recent">
+                <img src="https://cdn.discordapp.com/attachments/1168887401884680215/1266027426904018975/image.png?ex=66a3a76c&is=66a255ec&hm=0fb9318f23fbfca30ef19cfd0cf2baf9999127624d5fda41edcf0b2ed90c3ac3&" alt="">
+                <p>Tinku Badmos</p>
+            </div>
+            <div class="recent">
+                <img src="https://media.discordapp.net/attachments/1168887401884680215/1266027626447769620/image.png?ex=66a3a79b&is=66a2561b&hm=72119685a91ecb174d8a909e7ae46408b9f4cded1aa6c5e52d7f035ee1e37bbf&=&format=webp&quality=lossless&width=108&height=106" alt="">
+                <p>Rahul Gandhi</p>
+            </div>
+            <div class="recent">
+                <img src="https://cdn.discordapp.com/attachments/1168887401884680215/1266027880056487956/image.png?ex=66a3a7d8&is=66a25658&hm=e8647cf48d741321cf7b2fe5514d2b49d4eb4108640f8ab44cd73e5778b8cc47&" alt="">
+                <p>Peter Parker</p>
+            </div>
+            <div class="recent">
+                <img src="https://cdn.discordapp.com/attachments/1168887401884680215/1266028007621922867/image.png?ex=66a3a7f6&is=66a25676&hm=5db7f943cdeab63e8ba6157a677add080b5644130199173d5e198e5019d9c90f&" alt="">
+                <p>Daler Mehndi</p>
+            </div>
+            <div class="recent">
+                <img src="https://cdn.discordapp.com/attachments/1168887401884680215/1266028138924740692/image.png?ex=66a3a815&is=66a25695&hm=417f1285e8b30459dff7d84b998162a5a3eb0a10dcb1a3456071eea352ba75fc&" alt="">
+                <p>Mohan Tiwari</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    const qrDiv = document.querySelector('.qr');
+
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+            const video = document.createElement('video');
+            video.srcObject = stream;
+            video.play();
+            qrDiv.appendChild(video);
+        })
+        .catch(err => {
+            console.error("Error accessing the camera: ", err);
+        });
+    } else {
+        console.error("getUserMedia not supported on this browser!");
+    }
+});
+
+</script>
+</html>

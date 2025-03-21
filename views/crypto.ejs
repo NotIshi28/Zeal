@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto and Invest</title>
+    <style>
+        h1 {
+            color: white;
+            font-size: 6.5vw;
+            margin: 0px;
+            margin-top: 7vw;
+        }
+        .card {
+            display: flex;
+            background-color: rgba(100, 100, 100, 0.17);
+            width: 86vw;
+            padding: 4vw;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 3vw;
+            margin-top: 4.5vw;
+            background-image: url('./bitcoin.png');
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+        .card p {
+            font-family: Outfit;
+            color: #888;
+            font-size: 2vw;
+            margin: 0px;
+        }
+        .addrBtn {
+            background-color: #353535;
+            color: white;
+            font-family: Outfit;
+            padding: 2vw 4vw;
+            border: none;
+            outline: none;
+            font-size: 3vw;
+            border-radius: 1vw;
+            margin-top: 5.5vw;
+        }
+        .btns {
+            display: flex;
+            width: 70vw;
+            margin-left: 8vw;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4vw;
+        }
+        .btn {
+            border: none;
+            outline: none;
+            background-color: #2e2e2e;
+            border-radius: 100vw;
+            color: white;
+            font-family: Outfit;
+            font-size: 4vw;
+            padding: 4vw;
+            width: 33.5vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn svg {
+            height: 3.5vw;
+        }
+        .positive {
+            color: #5be360;
+        }
+        .negative {
+            color: #ff5730;
+        }
+        marquee {
+            background-color: #1e1e1e;
+            width: 100vw;
+            margin-left: -7vw;
+            padding: 1vw;
+            margin-top: 3vw;
+            margin-bottom: 3vw;
+            font-family: Outfit;
+            font-size: 3.5vw;
+        }
+        .stock {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5vw;
+            background-color: #1e1e1e;
+            margin-top: 2vw;
+            margin-bottom: 2vw;
+            border-radius: 100vw;
+        }
+        .stock p {
+            font-family: Outfit;
+            font-size: 4vw;
+            color: white;
+            margin: 0px;
+        }
+        .stock div {
+            display: flex;
+            align-items: flex-end;
+            gap: 1.8vw;
+        }
+        .stock span {
+            color: #5be360;
+            font-family: Outfit;
+            font-size: 3vw;
+        }
+        .stock svg {
+            width: 5vw;
+            height: 5vw;
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    <%- include('./partials/search.ejs') %>
+    <h1>Crypto and Invest</h1>
+    <div class="card">
+        <div>
+            <h1 style="margin: 0px; font-size: 5.5vw;">₹52,512<span style="color: #777;">.19</span></h1>
+            <p>0.0099btc <span style="color: #5be300">+9%</span></p>
+            <button class="addrBtn" onclick="alert('UY56urvdu76U7VYFJYTFU6UrvfU6Yrvf6yvdiv7u6ri')">Show Address</button>
+        </div>
+    </div>
+    <div class="btns">
+        <button class="btn">
+            <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10.7417" y="6.5437" width="6.82043" height="2.42127" rx="1.02993" fill="white"/>
+                <rect x="11.6562" y="3.46747" width="6.82043" height="2.42127" rx="1.02993" fill="white"/>
+                <rect x="11.3516" y="0.391113" width="6.82043" height="2.42127" rx="1.02993" fill="white"/>
+                <path d="M0.587646 9.55567C0.587646 9.27127 0.818203 9.04071 1.10261 9.04071H4.24525V17.0024H1.10261C0.818203 17.0024 0.587646 16.7718 0.587646 16.4874V9.55567Z" fill="white"/>
+                <path d="M5.49438 9.62317H9.9741V17.5848H7.49408H5.49438V9.62317Z" fill="white"/>
+                <path d="M7.37345 13.2707L9.9741 9.62317L13.663 12.2533C14.3577 12.7486 14.5193 13.7134 14.024 14.4081L12.3202 16.7977L7.37345 13.2707Z" fill="white"/>
+                <path d="M7.49408 18.8586V17.5848L7.49408 14.7413L17.0117 14.7413C18.1487 14.7413 19.0704 15.663 19.0704 16.7999C19.0704 17.9369 18.1487 18.8586 17.0117 18.8586L7.49408 18.8586Z" fill="white"/>
+                <path d="M7.49408 17.5848H5.49438L7.49408 18.8586V17.5848Z" fill="white"/>
+                </svg>
+            Deposit                
+        </button>
+        <button class="btn">
+            <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1.50391" y="1.09155" width="17.0274" height="8.32517" rx="0.52126" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M5.71165 5.25409H14.3355C14.3355 5.35005 14.2577 5.42784 14.1617 5.42784H5.88541C5.78945 5.42784 5.71165 5.35005 5.71165 5.25409Z" fill="white"/>
+                <path d="M5.71165 5.25409H14.3355M5.71165 5.25409V5.25409C5.71165 5.35005 5.78945 5.42784 5.88541 5.42784H14.1617C14.2577 5.42784 14.3355 5.35005 14.3355 5.25409V5.25409M5.71165 5.25409H4.36475M14.3355 5.25409H15.7389" stroke="white" stroke-width="1.04252" stroke-linecap="round" stroke-linejoin="round"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.2081 5.25409H4.82674V19.6336C4.82674 19.9215 5.06011 20.1549 5.348 20.1549H14.6869C14.9747 20.1549 15.2081 19.9215 15.2081 19.6336V5.25409ZM8.3148 12.6787L9.6539 15.0147H10.9781L9.51999 12.7456C9.88701 12.6712 10.1871 12.5324 10.4202 12.329C10.6533 12.1207 10.7946 11.833 10.8442 11.466H11.67V10.9155H10.8293C10.8095 10.7866 10.7698 10.6675 10.7103 10.5584C10.6558 10.4493 10.5863 10.3476 10.502 10.2534H11.67V9.70287H8.3148V10.2534H8.90252C9.06618 10.2534 9.20505 10.2832 9.31913 10.3427C9.43816 10.3972 9.53239 10.4741 9.60183 10.5733C9.67622 10.6725 9.7283 10.7866 9.75806 10.9155H8.3148V11.466H9.7655C9.73078 11.6049 9.6663 11.7239 9.57207 11.8231C9.4828 11.9223 9.36872 11.9992 9.22985 12.0538C9.09594 12.1034 8.93971 12.1281 8.76117 12.1281H8.3148V12.6787Z" fill="white"/>
+                </svg>
+            Withdraw                
+        </button>
+    </div>
+    <marquee>
+        <span class="positive">NIFTY +1.02%&nbsp;&nbsp;</span> 
+        <span class="positive">AAPL +4.41%&nbsp;&nbsp;</span> 
+        <span class="negative">AMZN -2.85%&nbsp;&nbsp;</span> 
+        <span class="positive">NVDA +10.53%&nbsp;&nbsp;</span> 
+        <span class="negative">META -3.14%&nbsp;&nbsp;</span> 
+        <span class="negative">JPM -2.42%&nbsp;&nbsp;</span> 
+        <span class="positive">TSLA +5.67%&nbsp;&nbsp;</span> 
+        <span class="positive">MSFT +1.89%&nbsp;&nbsp;</span> 
+        <span class="negative">GOOGL -0.98%&nbsp;&nbsp;</span> 
+        <span class="positive">BRK.A +2.77%&nbsp;&nbsp;</span> 
+        <span class="negative">NFLX -1.53%&nbsp;&nbsp;</span>
+    </marquee>
+    <h1 style="margin-top: 1.5vw;">Trending Stocks</h1>
+    <div class="stock">
+        <p>NVDA</p>
+        <div>
+            <span>+10.53%</span>
+            <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.489258 15.5109L2.50513 11.3646L5.38129 13.3441L5.85331 7.38084L10.3939 11.8438L11.2524 6.71466L13.4346 4.38969L17.1736 6.71466L20.1456 0.991699" stroke="#5BE360"/>
+                </svg>                
+        </div>
+    </div>
+    <div class="stock">
+        <p>AAPL</p>
+        <div>
+            <span>+4.42%</span>
+            <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.489258 12.4724L2.50513 8.32607L5.38129 10.3056L6.55372 1.69916L10.3939 8.80527L11.1526 6.05081L14.1197 7.38598L15.5537 2.2926L19.0647 7.63327" stroke="#5BE360"/>
+                </svg>                             
+        </div>
+    </div>
+    <div class="stock">
+        <p>META</p>
+        <div style="align-items: center;">
+            <span style="color: #ff5730">-3.14%</span>
+            <svg width="20" height="9" viewBox="0 0 20 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.599609 5.06471L3.12441 3.86241L4.32693 6.59464L7.45294 1.578L10.2183 7.28899L12.683 3.86241L15.7489 2.66009L19.1154 8.31096" stroke="#FF5730"/>
+                </svg>                             
+        </div>
+    </div>
+    <div class="stock">
+        <p>MSFT</p>
+        <div style="align-items: center;">
+            <span style="color: #ff5730">-6.55%</span>
+            <svg width="20" height="9" viewBox="0 0 20 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.599609 6.02606L2.2769 2.09082L3.80536 7.47367L6.13128 5.41358L9.58693 8.20468L13.4413 2.09082L16.8305 4.08448L19.0925 8.20468" stroke="#FF5730"/>
+                </svg>                              
+        </div>
+    </div>
+</body>
+</html>

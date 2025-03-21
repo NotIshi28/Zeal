@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency</title>
+    <style>
+        .heading {
+            color: #FFF;
+            font-family: "Neue Power";
+            font-size: 8vw;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 154.008%;
+        }
+        .beechme {
+            width: 100%;
+        }
+        .slider {
+            border-radius: 10px;
+            border: 1px solid rgba(92, 92, 92, 0.21);
+            background: rgba(0, 0, 0, 0.25);
+            margin-top: 5vw;
+            padding: 4vw;
+        }
+        .slider > p {
+            font-size: 3vw;
+            flex-shrink: 0;
+            font-family: Outfit;
+            color: #686767;
+        }
+        span {
+            color: #A7CEFF;
+            font-family: "Neue Power";
+            font-size: 8vw;
+            font-style: normal;
+            font-weight: 800;
+        }
+        .main-slider {
+            position: relative;
+        }
+        .slider-line {
+            width: 100%;
+            height: 1.5vw;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.30);
+            margin-bottom: 2vw;
+        }
+        .slider-line-invis {
+            width: 100%;
+            height: 1.5vw;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0);
+            margin-bottom: 2vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100000;
+        }
+        .slider2 {
+            width: 70%;
+            border-radius: 4px;
+            height: 1.5vw;
+            background: #FF7251;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .circle2 {
+            top: -120%;
+            left: 65%;
+            width: 5vw;
+            aspect-ratio: 1;
+            background: #FF7251;
+            position: absolute;
+            border-radius: 400px;
+        }
+        button {
+            border-radius: 4px;
+            background: #BFEB8D;
+            width: 100%;
+            height: 11vw;
+            margin-top: 3vw;
+            font-family: Outfit;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    <h1 class="heading">Emergency Funds</h1>
+
+    <img class="beechme" src="https://cdn.discordapp.com/attachments/1168887401884680215/1266087533368971324/image.png?ex=66a3df66&is=66a28de6&hm=0a920b5bcb74518641e0720b3f77b0af177446ae416563008f1131bff4129109&" alt="">
+
+    <div class="slider">
+        <p><span>₹</span><span id="money">14,000</span>/20,000</p>
+        <div class="main-slider">
+            <div id="slider-line-invis" class="slider-line-invis"></div>
+            <div class="slider-line"></div>
+            <div id="slider2" class="slider2"></div>
+            <div id="circle" class="circle2"></div>
+        </div>
+        <button>Withdraw</button>
+    </div>
+</body>
+<script>
+    const sliderInvis = document.getElementById('slider-line-invis')
+    const slider2 = document.getElementById('slider2')
+    const circle = document.getElementById('circle')
+    const money = document.getElementById('money')
+
+    sliderInvis.addEventListener('click', (event) => {
+        getDivPosition(event)
+    })
+    
+    function getDivPosition(event) {
+        var rect = sliderInvis.getBoundingClientRect();
+        var xPosition = event.clientX - rect.left;
+        // console.log(rect.left, event.clientX)
+        var percentage = xPosition/rect.width * 100
+        console.log(xPosition/rect.width * 100)
+        slider2.style.width = `${percentage}%`
+        circle.style.left = `${percentage - 5}%`
+        const moneyNum = money.innerText
+
+        money.innerText = Math.round((percentage*20000/100)/50) * 50
+        
+    }
+</script>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin The Wheel!</title>
+    <style>
+        img {
+            transition: 3s;
+            width: 86vw;
+        }
+        h1 {
+            margin: 0px;
+            color: white;
+            font-size: 7vw;
+        }
+        .hello {
+            width: 10vw;
+            height: 10vw;
+            margin-left: 38vw;
+            margin-bottom: -5vw;
+            z-index: 2;
+            position: relative;
+            margin-top: 10vw;
+        }
+        .btn {
+            background-color: rgba(255, 255, 255, 0.23);
+            border: none;
+            outline: none;
+            border-radius: 100vw;
+            color: white;
+            font-family: Outfit;
+            font-size: 4.5vw;
+            padding: 3vw;
+            width: 40vw;
+            margin-left: 23vw;
+            margin-top: 6vw;
+            transition: 3s;
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    <h1>Spin The Wheel!</h1>
+    <svg width="50" height="45" viewBox="0 0 50 45" fill="none" xmlns="http://www.w3.org/2000/svg" class="hello">
+        <path d="M21.9689 42.1411L1.44798 6.59779C0.10083 4.26445 1.78477 1.34779 4.47907 1.34779L45.521 1.34779C48.2153 1.34779 49.8992 4.26446 48.552 6.59779L28.0311 42.1411C26.6839 44.4744 23.3161 44.4744 21.9689 42.1411Z" fill="black" stroke="white"/>
+        </svg>        
+    <img src="wheel.png" alt="" id="wheel"><br>
+    <button class="btn" id="btn">Spin</button>
+    <script>
+        var wheelSpun = false;
+        const wheelImg = document.getElementById('wheel');
+        const mybtn = document.getElementById('btn')
+        mybtn.addEventListener('click', (e) => {
+            if (wheelSpun === false) {
+                const randomRotation = Math.floor(Math.random() * 359);
+                const finalRotation = 720 + randomRotation;
+                wheelImg.style.transform = 'rotate(' + finalRotation + 'deg)';
+                wheelImg.style.transformOrigin = (wheelImg.width/2) + " " + (wheelImg.height/2);
+                setTimeout(() => {
+                    if (randomRotation <= 90) {
+                        alert("Congratulations! You have won a 10% Amazon Voucher!")
+                    } else if (randomRotation <= 180) {
+                        alert('Better luck next time!')
+                    } else if (randomRotation <= 270) {
+                        alert('Congratulations! You have won a Myntra 15% Coupon!')
+                    } else {
+                        alert('Congratulations! You have won a Spotify Premium One Month Subscription!')
+                    }
+                    wheelSpun = true;                   
+                }, 3000);
+            }
+            
+        })
+    </script>
+</body>
+</html>

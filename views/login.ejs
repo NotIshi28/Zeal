@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        h1 {
+            color: white;
+            margin: 0px;
+            margin-top: 8vw;
+            font-size: 11vw;
+            font-family: Outfit;
+            font-weight: normal;
+            margin-bottom: 4vw;
+        }
+        .middle {
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        ::placeholder {
+            color: white;
+        }
+        .input {
+            border: none;
+            outline: none;
+            color: white;
+            font-family: Outfit;
+            font-size: 4.5vw;
+            padding: 3vw 4vw;
+            border-radius: 100vw;
+            width: 60vw;
+            background-color: #282828;
+            margin-bottom: 3vw;
+        }
+        .submitBtn {
+            background-color: #f9d44d;
+            color: black;
+            font-family: Outfit;
+            font-size: 4.5vw;
+            border: none;
+            outline: none;
+            width: 60vw;
+            padding: 3vw;
+            border-radius: 100vw;
+            margin-top: 2vw;
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    <div class="middle">
+        <div>
+            <h1>Login</h1>
+            <form action="" method="POST">
+                <input type="email" name="email" placeholder="Email:" required autocomplete="off" class="input"><br>
+                <input type="password" name="password" placeholder="Password:" required class="input"><br>
+                <% if (messages.error) { %>
+                <p style="color: white; font-family: Outfit; font-size: 4vw; margin: 2vw 0px; text-align: center;"><%= messages.error %></p>
+                <% } %>
+                <input type="submit" class="submitBtn"><br>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

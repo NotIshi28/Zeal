@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family</title>
+    <style>
+        h1 {
+            color: #FFF;
+            font-family: "Neue Power";
+            font-size: 8vw;
+            font-style: normal;
+            font-weight: 800;
+        }
+        .page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5vw;
+        }
+        #image {
+            margin-top: 5vw;
+            width: 100%;
+        }
+        .family {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+        }
+        .member {
+            width: 16vw;
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+
+    <h1>Family Pool</h1>
+    <div class="page">
+        <img id="image" src="https://cdn.discordapp.com/attachments/1168887401884680215/1266076248472555562/image.png?ex=66a3d4e4&is=66a28364&hm=a27227ba858fc26a21f312be61f04f76e815354500b68dd8891091ed184de3dc&" alt="">
+        <div class="family">
+            <img id="arvind" class="member" src="https://cdn.discordapp.com/attachments/1168887401884680215/1266077014075375638/image.png?ex=66a3d59a&is=66a2841a&hm=4949b453571f14641529f34f83ea33430111d2c916306dbe2fdca9fa0ad2704d&" alt="">
+            <img id="baba" class="member" src="https://cdn.discordapp.com/attachments/1168887401884680215/1266077313963917412/image.png?ex=66a3d5e2&is=66a28462&hm=322c4b13384e0bf8b5ba3d3f4531c245beb6d0e1a4db2dfc7b4e44a01b383661&" alt="">
+            <img id="modi" class="member" src="https://cdn.discordapp.com/attachments/1168887401884680215/1266077437763129364/image.png?ex=66a3d5ff&is=66a2847f&hm=ed5b029238cc1e4a67ec7507075e7ad0d5d5b2f0743b10881e83241a4a1c17d8&" alt="">
+            <img id="putin" class="member" src="https://cdn.discordapp.com/attachments/1168887401884680215/1266077613496205312/image.png?ex=66a3d629&is=66a284a9&hm=377ce0d041a17bedf81e300b4eda6307772be7e23ab9a4f4ce9326403ca33a6d&" alt="">
+        </div>
+    </div>
+
+
+    
+</body>
+<script>
+    const image = document.getElementById('image')
+    const arvind = document.getElementById('arvind')
+    const baba = document.getElementById('baba')
+    const modi = document.getElementById('modi')
+    const putin = document.getElementById('putin')
+
+    arvind.addEventListener('click', () => {
+        image.src = 'https://cdn.discordapp.com/attachments/1168887401884680215/1266081346762182756/image.png?ex=66a3d9a3&is=66a28823&hm=4f4718445ab11466a3606a30d5a3991ee4b4fdd3d477ac6690b530b1eb44982f&'
+    })
+    baba.addEventListener('click', () => {
+        image.src = 'https://cdn.discordapp.com/attachments/1168887401884680215/1266081751956979752/image.png?ex=66a3da04&is=66a28884&hm=78d40fbc9027b6257bc784cfbee261d0cfab9ca98474fc002fa57dbb71aaf3f4&'
+    })
+    modi.addEventListener('click', () => {
+        image.src = 'https://cdn.discordapp.com/attachments/1168887401884680215/1266082349204897913/image.png?ex=66a3da92&is=66a28912&hm=47994a4120b79328b8068bc698791e7fcdb7e4cab73240d174ac450e1decdd0c&'
+    })
+    putin.addEventListener('click', () => {
+        image.src = 'https://cdn.discordapp.com/attachments/1168887401884680215/1266082592294174931/image.png?ex=66a3dacc&is=66a2894c&hm=5986d92e88c2a0eb22fd9773c7d6e0434be4ddbd46d9375328ec4317bb29c50c&'
+    })
+</script>
+</html>

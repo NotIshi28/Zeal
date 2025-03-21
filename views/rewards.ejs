@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rewards</title>
+    <style>
+        h1 {
+            color: white;
+            font-size: 6.5vw;
+            margin: 0px;
+            margin-top: 7vw;
+        }
+        .cards {
+            display: flex;
+            width: 86vw;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 13vw;
+            margin-top: 4vw;
+        }
+        .card {
+            width: 25vw;
+            height: 33vw;
+            background-size: 100% 100%;
+            background-color: #111;
+            border-radius: 3vw;
+        }
+        img {
+            width: 100%;
+            margin-bottom: 28vw;
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    <%- include('./partials/search.ejs') %>
+    <h1>Rewards</h1>
+    <div class="cards">
+        <div class="card" style="background-image: url(stw.png)" onclick="window.location.href = '/wheel'"></div>
+        <div class="card" style="background-image: url(slots.png)" onclick="alert('Coming Soon!')"></div>
+        <div class="card" style="background-image: url(lucky.png)" onclick="alert('Coming Soon!')"></div>
+    </div>
+    <h1>Coupons & Vouchers</h1>
+    <img src="rewards.png" alt="" onclick="alert('Use Coupon Code VELOCITY24 to avail this coupon!')">
+    <script>
+        window.onload = () => {
+            document.getElementById('1').setAttribute('fill', 'white')
+            document.getElementById('1').setAttribute('fill-opacity', '0.4')
+            document.getElementById('4').setAttribute('fill', '#F9D44D')
+            document.getElementById('4').setAttribute('opacity', '1')
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Calendar</title>
+    <style>
+        h1 {
+            color: white;
+            font-size: 6.5vw;
+            margin: 0px;
+            margin-top: 7vw;
+        }
+        img {
+            width: 86vw;
+            margin-top: 5vw;
+        }
+        .card {
+            background-color: #2d2d2d;
+            width: 86vw;
+            border-radius: 6vw;
+            padding: 6vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3vw;
+        }
+        .card h2 {
+            color: #f9d44d;
+            font-size: 5.5vw;
+            font-family: Outfit;
+            font-weight: normal;
+            margin: 0px;
+            margin-bottom: 2vw;
+        }
+        .card p {
+            opacity: 0.4;
+            color: white;
+            margin: 0px;
+            font-family: Outfit;
+            font-size: 3.5vw;
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/navbar') %>
+    <%- include('./partials/search') %>
+    <h1>Financial Calendar</h1>
+    <img src="calendar.png"><br>
+    <h1>Upcoming Payments</h1>
+    <div class="card">
+        <div class="content">
+            <h2>Airtel Recharge</h2>
+            <p>28th March</p>
+        </div>
+        <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <circle cx="22.5" cy="22.5" r="22.5" fill="url(#pattern0_353_3)"/>
+            <defs>
+            <pattern id="pattern0_353_3" patternContentUnits="objectBoundingBox" width="1" height="1">
+            <use xlink:href="#image0_353_3" transform="scale(0.00444444)"/>
+            </pattern>
+            <image id="image0_353_3" width="225" height="225" xlink:href="data:image/png;base64,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"/>
+            </defs>
+            </svg>            
+    </div>
+    <script>
+        window.onload = () => {
+            document.getElementById('1').setAttribute('fill', 'white')
+            document.getElementById('1').setAttribute('fill-opacity', '0.4')
+            document.getElementById('2').setAttribute('fill', '#F9D44D')
+            document.getElementById('2').setAttribute('fill-opacity', '1')
+        }
+    </script>
+</body>
+</html>
