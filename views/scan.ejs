@@ -289,7 +289,7 @@
     const qrDiv = document.querySelector('.qr');
 
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ video: true })
+        navigator.mediaDevices.getUserMedia({video: {facingMode: 'environment'}})
         .then(stream => {
             const video = document.createElement('video');
             video.srcObject = stream;
