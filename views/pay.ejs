@@ -68,10 +68,175 @@
             border-radius: 10px;
           "
           min="0"
-          max="1000000"
+          max="500000"
           name="amount"
           id="amount"
         />
+        <input
+          type="password"
+          placeholder="Enter your password here"
+          style="
+            background-color: #191919;
+            color: #fff;
+            width: 80vw;
+            margin-top: 2vh;
+            height: 5vh;
+            font-family: neue;
+            outline: none;
+            border: none;
+            padding: 2vh;
+            font-size: 1em;
+            border-radius: 10px;
+          "
+          name="password"
+          id="password"
+        />
+        <div
+          class="categories"
+          style="
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1vh;
+            margin-top: 2vh;
+            margin-left: 3vw;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              width: auto;
+              height: 5vh;
+              padding: 2vh;
+              font-size: 0.9em;
+              color: #fff;
+              border: 1px solid #fff;
+              border-radius: 10px;
+            "
+            id="food"
+            class="category"
+          >
+            Food
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              width: auto;
+              height: 5vh;
+              padding: 2vh;
+              font-size: 0.9em;
+              color: #fff;
+              border: 1px solid #fff;
+              border-radius: 10px;
+            "
+            id="travel"
+            class="category"
+          >
+            Travel
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              width: auto;
+              height: 5vh;
+              padding: 2vh;
+              font-size: 0.9em;
+              color: #fff;
+              border: 1px solid #fff;
+              border-radius: 10px;
+            "
+            id="shopping"
+            class="category"
+          >
+            Shopping
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              width: auto;
+              height: 5vh;
+              padding: 2vh;
+              font-size: 0.9em;
+              color: #fff;
+              border: 1px solid #fff;
+              border-radius: 10px;
+            "
+            id="education"
+            class="category"
+          >
+            Education
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              width: auto;
+              height: 5vh;
+              padding: 2vh;
+              font-size: 0.9em;
+              color: #fff;
+              border: 1px solid #fff;
+              border-radius: 10px;
+            "
+            id="rent"
+            class="category"
+          >
+            Rent
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              width: auto;
+              height: 5vh;
+              padding: 2vh;
+              font-size: 0.9em;
+              color: #fff;
+              border: 1px solid #fff;
+              border-radius: 10px;
+            "
+            id="personalPayment"
+            class="category"
+          >
+            Personal Payment
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              width: auto;
+              height: 5vh;
+              padding: 2vh;
+              font-size: 0.9em;
+              color: #fff;
+              border: 1px solid #fff;
+              border-radius: 10px;
+            "
+            id="others"
+            class="category"
+          >
+            Others
+          </div>
+        </div>
+        <input type="text" name="category" id="category" hidden />
         <button
           style="
             outline: none;
@@ -94,4 +259,20 @@
       </p>
     </div>
   </body>
+  <script>
+    const categories = document.querySelectorAll(".category");
+    const categoryInput = document.getElementById("category");
+
+    categories.forEach((category) => {
+      category.addEventListener("click", () => {
+        categories.forEach((cat) => {
+          cat.style.backgroundColor = "";
+          cat.style.color = "#fff";
+        });
+        category.style.backgroundColor = "#fff";
+        category.style.color = "#000";
+        categoryInput.value = category.id;
+      });
+    });
+  </script>
 </html>
