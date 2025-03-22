@@ -104,6 +104,15 @@
         margin-left: -7vw;
         margin-top: 15vw;
       }
+
+      @keyframes open {
+        0% {
+            transform: scale(0, 0);
+        }
+        100% {
+            transform: scale(1, 1);
+        }
+      }
     </style>
   </head>
   <body>
@@ -285,6 +294,8 @@
             align-items: center;
             justify-content: center;
             gap: 1vh;
+            animation-name: open;
+            animation-duration: 0.5s;
           "
         >
           <p style="color: #fff; margin: 0">Your Balance:</p>
