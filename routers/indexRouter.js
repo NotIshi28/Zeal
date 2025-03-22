@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 
 router.post('/start', async (req, res) => {
     try {
-        const response = await axios.post('https://7779-103-25-231-104.ngrok-free.app/api/start');
+        const response = await axios.get('https://7779-103-25-231-104.ngrok-free.app/api/start');
         console.log(response.data);
         res.redirect('/')
     } catch (error) {
