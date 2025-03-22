@@ -1,5 +1,4 @@
-const router = require("express").Router(),
-  User = require("../schemas/userSchema");
+const router = require("express").Router();
 
 router.get("/", (req, res) => {
   if (!req.user) return res.redirect("/login");
