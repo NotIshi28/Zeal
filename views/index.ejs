@@ -458,8 +458,9 @@
             <button id="startBtn" style="background: #1E1E1E; color: white; border: none; border-radius: 10vw; padding: 2vw 4vw; font-size: 4vw; cursor: pointer;" onclick="fetch('/stop', {method: 'POST'}).then(res => res.text()).then().catch(err => document.getElementById('apiResponse').textContent = 'Error: ' + err)">Stop</button>
             <button id="startBtn" style="background: #1E1E1E; color: white; border: none; border-radius: 10vw; padding: 2vw 4vw; font-size: 4vw; cursor: pointer;" onclick="fetch('/status', {method: 'POST'}).then(res => res.text()).then().catch(err => document.getElementById('apiResponse').textContent = 'Error: ' + err)">Status</button>
         </div>
+        <img style="margin-top: 3vh; width: 70%; align-self: center; margin-right: 3vw;" src="scrooge.png" alt="">
     </div>
-    <div class="div" style="height: 1vh;"></div>
+    <div class="div" style="height: 2vh;"></div>
     <script>
       function cardAnimation(e) {
         const myclass = e.target.className;
