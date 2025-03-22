@@ -451,6 +451,15 @@
       </div>
     </div>
     <img src="cards.png" alt="" class="cardsImg" />
+    <div class="scrooge-container" style="display:flex; flex-direction: column; justify-content: center; background: rgba(249, 212, 77, 0.76); border-radius: 3vw; padding: 3vw; margin-top: 4vh; margin-bottom: 12vh;">
+        <div style="font-size: 10vw;">Meet Scrooge</div>
+        <div style="display: flex; gap: 3vw; margin-top: 3vw;">
+            <button id="startBtn" style="background: #1E1E1E; color: white; border: none; border-radius: 10vw; padding: 2vw 4vw; font-size: 4vw; cursor: pointer;" onclick="fetch('/start', {method: 'POST'}).then(res => res.text()).then(data => document.getElementById('apiResponse').textContent = data).catch(err => document.getElementById('apiResponse').textContent = 'Error: ' + err)">Start</button>
+            <button id="startBtn" style="background: #1E1E1E; color: white; border: none; border-radius: 10vw; padding: 2vw 4vw; font-size: 4vw; cursor: pointer;" onclick="fetch('/stop', {method: 'POST'}).then(res => res.text()).then(data => document.getElementById('apiResponse').textContent = data).catch(err => document.getElementById('apiResponse').textContent = 'Error: ' + err)">Stop</button>
+            <button id="startBtn" style="background: #1E1E1E; color: white; border: none; border-radius: 10vw; padding: 2vw 4vw; font-size: 4vw; cursor: pointer;" onclick="fetch('/status', {method: 'POST'}).then(res => res.text()).then(data => document.getElementById('apiResponse').textContent = data).catch(err => document.getElementById('apiResponse').textContent = 'Error: ' + err)">Status</button>
+        </div>
+    </div>
+    <div class="div" style="height: 1vh;"></div>
     <script>
       function cardAnimation(e) {
         const myclass = e.target.className;
