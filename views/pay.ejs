@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pay</title>
+  </head>
+  <body>
+    <%- include('./partials/navbar.ejs') %>
+
+    <div class="heading">
+      <svg
+        onclick="window.history.back()"
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11.7102 9.00002L17.1324 14.4203C17.4921 14.78 17.6941 15.2678 17.6941 15.7764C17.6941 16.285 17.4921 16.7728 17.1324 17.1324C16.7728 17.4921 16.285 17.6941 15.7764 17.6941C15.2678 17.6941 14.78 17.4921 14.4203 17.1324L9.00002 11.7102L3.57968 17.1324C3.22004 17.4921 2.73225 17.6941 2.22364 17.6941C1.71503 17.6941 1.22724 17.4921 0.867599 17.1324C0.507954 16.7728 0.305908 16.285 0.305908 15.7764C0.305908 15.2678 0.507954 14.78 0.867599 14.4203L6.28985 9.00002L0.867599 3.57968C0.507954 3.22004 0.305908 2.73225 0.305908 2.22364C0.305908 1.71503 0.507954 1.22724 0.867599 0.867599C1.22724 0.507954 1.71503 0.305908 2.22364 0.305908C2.73225 0.305908 3.22004 0.507954 3.57968 0.867599L9.00002 6.28985L14.4203 0.867599C14.78 0.507954 15.2678 0.305908 15.7764 0.305908C16.285 0.305908 16.7728 0.507954 17.1324 0.867599C17.4921 1.22724 17.6941 1.71503 17.6941 2.22364C17.6941 2.73225 17.4921 3.22004 17.1324 3.57968L11.7102 9.00002Z"
+          fill="#F9D44D"
+        />
+      </svg>
+
+      <div class="text">
+        <h1 style="color: #fff">Pay</h1>
+      </div>
+    </div>
+    <div
+      class="container"
+      style="
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <p
+        style="
+          color: #fff;
+          word-break: 10;
+          margin: 0;
+          margin-top: 3vh;
+          font-family: Arial, Helvetica, sans-serif;
+        "
+      >
+        User ID:
+      </p>
+      <p
+        style="
+          color: #fff;
+          word-break: 10;
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        "
+      >
+        <%= user.id %>
+      </p>
+    </div>
+  </body>
+</html>
