@@ -1,194 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zeal - Dashboard</title>
     <style>
-        body {
-            margin: 7vw !important;
-            overflow-x: hidden !important;
-            background-color: #131313;
-            height: 100vh;
-            font-family: neue;
-        }
-        h1 {
-            color: white;
-            font-size: 7vw;
-            font-weight: lighter;
-            margin: 0px;
-            margin-top: 8vw;
-        }
-        .moodHeading {
-            background: #BFEB8D;
-            font-family: Outfit;
-            color: black;
-            padding: 2.5vw 4vw;
-            font-size: 3.5vw;
-            display: inline-block;
-            border-radius: 3vw 0px 3vw 0px;
-            font-weight: bold;
-            margin-top: 6vw;
-        }
-        .moodBody {
-            border: 1px solid rgba(255, 255, 255, 0.17);
-            background: rgba(33, 33, 33, 0.57);
-            backdrop-filter: blur(10vw);
-            border-radius: 0px 3vw 3vw 3vw;
-            padding: 4vw;
-            position: relative;
-            width: 80vw;
-            display: flex;
-            gap: 1.8vw;
-            height: 30vw;
-        }
-        .moodBody div p {
-            width: 100%;
-        }
-        .moodImage {
-            width: 36vw;
-            height: 36vw;
-            margin-top: -7vw;
-            margin-right: -12.5vw;
-        }
-        .actions {
-            display: flex;
-            width: 80vw;
-            gap: 6.6666666666vw;
-            margin-top: 4vw;
-            margin-left: 3vw;
-        }
-        .action {
-            width: 15vw;
-            height: 15vw;
-            background-color: rgba(244, 244, 244, 0.1);
-            backdrop-filter: blur(10vw);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 100vw;
-        }
-        .action svg {
-            width: 10vw;
-        }
-        .cards {
-            display: flex;
-            margin-left: -7vw;
-            width: 100vw;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 23vw;
-            margin-bottom: 35vw;
-        }
-        .card1 {
-            width: 40vw;
-            height: 23vw;
-            opacity: 0.3;
-            transition: 0.3s;
-            margin-left: -22vw;
-        }
-        .card3 {
-            width: 40vw;
-            height: 23vw;
-            opacity: 0.3;
-            transition: 0.3s;
-            margin-right: -22vw;
-        }
-        .card2 {
-            width: 55vw;
-            height: 31vw;
-            transition: 0.3s;
-        }
-        .cardsImg {
-            width: 100vw;
-            margin-left: -7vw;
-            margin-top: 15vw;
-        }
+      body {
+        margin: 7vw !important;
+        overflow-x: hidden !important;
+        background-color: #131313;
+        height: 100vh;
+        font-family: neue;
+      }
+      h1 {
+        color: white;
+        font-size: 7vw;
+        font-weight: lighter;
+        margin: 0px;
+        margin-top: 8vw;
+      }
+      .moodHeading {
+        background: #bfeb8d;
+        font-family: Outfit;
+        color: black;
+        padding: 2.5vw 4vw;
+        font-size: 3.5vw;
+        display: inline-block;
+        border-radius: 3vw 0px 3vw 0px;
+        font-weight: bold;
+        margin-top: 6vw;
+      }
+      .moodBody {
+        border: 1px solid rgba(255, 255, 255, 0.17);
+        background: rgba(33, 33, 33, 0.57);
+        backdrop-filter: blur(10vw);
+        border-radius: 0px 3vw 3vw 3vw;
+        padding: 4vw;
+        position: relative;
+        width: 80vw;
+        display: flex;
+        gap: 1.8vw;
+        height: 30vw;
+      }
+      .moodBody div p {
+        width: 100%;
+      }
+      .moodImage {
+        width: 36vw;
+        height: 36vw;
+        margin-top: -7vw;
+        margin-right: -12.5vw;
+      }
+      .actions {
+        display: flex;
+        width: 80vw;
+        gap: 6.6666666666vw;
+        margin-top: 4vw;
+        margin-left: 3vw;
+      }
+      .action {
+        width: 15vw;
+        height: 15vw;
+        background-color: rgba(244, 244, 244, 0.1);
+        backdrop-filter: blur(10vw);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100vw;
+      }
+      .action svg {
+        width: 10vw;
+      }
+      .cards {
+        display: flex;
+        margin-left: -7vw;
+        width: 100vw;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 23vw;
+        margin-bottom: 35vw;
+      }
+      .card1 {
+        width: 40vw;
+        height: 23vw;
+        opacity: 0.3;
+        transition: 0.3s;
+        margin-left: -22vw;
+      }
+      .card3 {
+        width: 40vw;
+        height: 23vw;
+        opacity: 0.3;
+        transition: 0.3s;
+        margin-right: -22vw;
+      }
+      .card2 {
+        width: 55vw;
+        height: 31vw;
+        transition: 0.3s;
+      }
+      .cardsImg {
+        width: 100vw;
+        margin-left: -7vw;
+        margin-top: 15vw;
+      }
     </style>
-</head>
-<body>
-    <%- include('./partials/navbar.ejs') %>
-    <%- include('./partials/search.ejs') %>
+  </head>
+  <body>
+    <%- include('./partials/navbar.ejs') %> <%- include('./partials/search.ejs')
+    %>
     <h1>Welcome <%= user.fname %></h1>
     <div class="moodHeading">Financial Mood</div>
     <div class="moodBody">
-        <div>
-            <h1 style="margin-top: 0px; margin-bottom: 2vw;">Brilliant</h1>
-            <p style="color: #fff; opacity: 0.3; line-height: 1.6; font-size: 3.5vw; font-family: Outfit; margin: 0px;">You are doing great! Keep up the good job.</p>
-        </div>
-        <img src="brilliant.png" class="moodImage">
+      <div>
+        <h1 style="margin-top: 0px; margin-bottom: 2vw">Brilliant</h1>
+        <p
+          style="
+            color: #fff;
+            opacity: 0.3;
+            line-height: 1.6;
+            font-size: 3.5vw;
+            font-family: Outfit;
+            margin: 0px;
+          "
+        >
+          You are doing great! Keep up the good job.
+        </p>
+      </div>
+      <img src="brilliant.png" class="moodImage" />
     </div>
     <h1 style="font-size: 5vw; margin-top: 10vw">Quick Actions</h1>
     <div class="actions">
-        <div class="action">
-            <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g opacity="0.6">
-                <path d="M18.5239 13.4364C18.5239 12.3554 19.4001 11.4791 20.4811 11.4791H24.099V15.3936H20.4811C19.4002 15.3936 18.5239 14.5173 18.5239 13.4364V13.4364Z" stroke="white" stroke-width="1.65663"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.7514 2.38287C17.8036 2.3709 17.8534 2.41057 17.8534 2.46414V4.49346H8.54593L17.7514 2.38287ZM19.51 2.46414V4.49346H21.2814C22.2424 4.49346 23.0215 5.27248 23.0215 6.23346V11.4791H21.3648V6.23346C21.3648 6.18741 21.3275 6.15008 21.2814 6.15008H18.6817H2.05503V19.7886C2.05503 19.8346 2.09236 19.872 2.13841 19.872H21.2814C21.3275 19.872 21.3648 19.8346 21.3648 19.7886V15.3936H23.0215V19.7886C23.0215 20.7496 22.2424 21.5286 21.2814 21.5286H2.13841C1.17743 21.5286 0.398399 20.7496 0.398399 19.7886V5.32177C0.398399 4.93562 0.665221 4.6007 1.0416 4.5144L17.3811 0.768139C18.4708 0.5183 19.51 1.34618 19.51 2.46414Z" fill="white"/>
-                <circle cx="20.5589" cy="13.4364" r="0.308561" stroke="white" stroke-width="0.607796"/>
-                </g>
-                </svg>                
+      <div class="action">
+        <svg
+          width="25"
+          height="22"
+          viewBox="0 0 25 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g opacity="0.6">
+            <path
+              d="M18.5239 13.4364C18.5239 12.3554 19.4001 11.4791 20.4811 11.4791H24.099V15.3936H20.4811C19.4002 15.3936 18.5239 14.5173 18.5239 13.4364V13.4364Z"
+              stroke="white"
+              stroke-width="1.65663"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M17.7514 2.38287C17.8036 2.3709 17.8534 2.41057 17.8534 2.46414V4.49346H8.54593L17.7514 2.38287ZM19.51 2.46414V4.49346H21.2814C22.2424 4.49346 23.0215 5.27248 23.0215 6.23346V11.4791H21.3648V6.23346C21.3648 6.18741 21.3275 6.15008 21.2814 6.15008H18.6817H2.05503V19.7886C2.05503 19.8346 2.09236 19.872 2.13841 19.872H21.2814C21.3275 19.872 21.3648 19.8346 21.3648 19.7886V15.3936H23.0215V19.7886C23.0215 20.7496 22.2424 21.5286 21.2814 21.5286H2.13841C1.17743 21.5286 0.398399 20.7496 0.398399 19.7886V5.32177C0.398399 4.93562 0.665221 4.6007 1.0416 4.5144L17.3811 0.768139C18.4708 0.5183 19.51 1.34618 19.51 2.46414Z"
+              fill="white"
+            />
+            <circle
+              cx="20.5589"
+              cy="13.4364"
+              r="0.308561"
+              stroke="white"
+              stroke-width="0.607796"
+            />
+          </g>
+        </svg>
+      </div>
+      <div class="action" onclick="window.location.href = '/crypto'">
+        <svg
+          width="33"
+          height="32"
+          viewBox="0 0 33 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g opacity="0.6" clip-path="url(#clip0_433_2371)">
+            <path
+              d="M23.3236 10.9439C23.0261 9.83384 22.2999 8.88736 21.3046 8.31272C20.3093 7.73809 19.1265 7.58237 18.0164 7.87982L17.4556 5.78698C17.3812 5.50945 17.1997 5.27283 16.9508 5.12917C16.702 4.98551 16.4063 4.94658 16.1288 5.02095C15.8513 5.09531 15.6146 5.27688 15.471 5.5257C15.3273 5.77453 15.2884 6.07023 15.3628 6.34775L15.9235 8.44059L13.8307 9.00137L13.2699 6.90853C13.1956 6.631 13.014 6.39438 12.7652 6.25072C12.5163 6.10706 12.2206 6.06813 11.9431 6.1425C11.6656 6.21686 11.429 6.39843 11.2853 6.64725C11.1416 6.89607 11.1027 7.19178 11.1771 7.4693L11.7379 9.56214L8.59859 10.4033C8.32106 10.4777 8.08444 10.6592 7.94078 10.9081C7.79713 11.1569 7.7582 11.4526 7.83256 11.7301C7.90692 12.0076 8.08849 12.2443 8.33731 12.3879C8.58614 12.5316 8.88184 12.5705 9.15937 12.4961L10.2058 12.2158L13.0097 22.68L11.9632 22.9603C11.6857 23.0347 11.4491 23.2163 11.3054 23.4651C11.1618 23.7139 11.1228 24.0096 11.1972 24.2871C11.2716 24.5647 11.4531 24.8013 11.702 24.945C11.9508 25.0886 12.2465 25.1275 12.524 25.0532L15.6633 24.212L16.224 26.3049C16.2984 26.5824 16.48 26.819 16.7288 26.9627C16.9776 27.1063 17.2733 27.1453 17.5509 27.0709C17.8284 26.9965 18.065 26.815 18.2087 26.5661C18.3523 26.3173 18.3912 26.0216 18.3169 25.7441L17.7561 23.6512L19.849 23.0905L20.4097 25.1833C20.4841 25.4608 20.6657 25.6975 20.9145 25.8411C21.1633 25.9848 21.459 26.0237 21.7365 25.9493C22.0141 25.875 22.2507 25.6934 22.3943 25.4446C22.538 25.1958 22.5769 24.9001 22.5026 24.6225L21.9418 22.5297C22.7882 22.2971 23.5441 21.8128 24.1092 21.1411C24.6744 20.4694 25.0222 19.6419 25.1067 18.7681C25.1911 17.8944 25.0082 17.0156 24.5821 16.2481C24.156 15.4806 23.5069 14.8606 22.7207 14.4701C23.0664 13.9592 23.299 13.3803 23.403 12.7722C23.507 12.1641 23.4799 11.5408 23.3236 10.9439ZM21.381 20.4369L15.1025 22.1192L13.9809 17.9335L20.2595 16.2512C20.8145 16.1024 21.4059 16.1803 21.9036 16.4676C22.4012 16.7549 22.7644 17.2282 22.9131 17.7832C23.0618 18.3383 22.9839 18.9297 22.6966 19.4273C22.4093 19.925 21.9361 20.2881 21.381 20.4369ZM19.6987 14.1583L13.4202 15.8407L12.2986 11.655L18.5771 9.97266C19.1322 9.82393 19.7236 9.90179 20.2212 10.1891C20.7189 10.4764 21.082 10.9497 21.2308 11.5047C21.3795 12.0598 21.3016 12.6512 21.0143 13.1488C20.727 13.6465 20.2537 14.0096 19.6987 14.1583Z"
+              fill="white"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_433_2371">
+              <rect
+                width="26"
+                height="26"
+                fill="white"
+                transform="translate(0.918137 6.85352) rotate(-15)"
+              />
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <div class="action" onclick="window.location.href = '/family'">
+        <svg
+          width="30"
+          height="21"
+          viewBox="0 0 30 21"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g opacity="0.6">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M25.9457 15.2358H20.8146C19.3181 15.2358 18.1049 16.449 18.1049 17.9455V19.4048H28.6555V17.9455C28.6555 16.449 27.4423 15.2358 25.9457 15.2358ZM20.8146 13.8912C18.5755 13.8912 16.7604 15.7064 16.7604 17.9455V19.868C16.7604 20.3548 17.155 20.7494 17.6417 20.7494H29.1186C29.6054 20.7494 30 20.3548 30 19.868V17.9455C30 15.7064 28.1848 13.8912 25.9457 13.8912H20.8146Z"
+              fill="white"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M23.3802 11.1385C24.6651 11.1385 25.7068 10.0969 25.7068 8.81195C25.7068 7.52701 24.6651 6.48536 23.3802 6.48536C22.0952 6.48536 21.0536 7.52701 21.0536 8.81195C21.0536 10.0969 22.0952 11.1385 23.3802 11.1385ZM23.3802 12.4831C25.4077 12.4831 27.0513 10.8395 27.0513 8.81195C27.0513 6.78443 25.4077 5.14081 23.3802 5.14081C21.3527 5.14081 19.709 6.78443 19.709 8.81195C19.709 10.8395 21.3527 12.4831 23.3802 12.4831Z"
+              fill="white"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12.2593 13.6101H5.6153C3.67752 13.6101 2.10665 15.181 2.10665 17.1188V19.0084H15.7679V17.1188C15.7679 15.181 14.1971 13.6101 12.2593 13.6101ZM5.6153 11.8691C2.716 11.8691 0.365662 14.2195 0.365662 17.1188V19.6082C0.365662 20.2385 0.876606 20.7494 1.50689 20.7494H16.3677C16.998 20.7494 17.5089 20.2385 17.5089 19.6082V17.1188C17.5089 14.2195 15.1586 11.8691 12.2593 11.8691H5.6153Z"
+              fill="white"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M8.93724 8.30488C10.601 8.30488 11.9498 6.95611 11.9498 5.29231C11.9498 3.62852 10.601 2.27974 8.93724 2.27974C7.27344 2.27974 5.92467 3.62852 5.92467 5.29231C5.92467 6.95611 7.27344 8.30488 8.93724 8.30488ZM8.93724 10.0459C11.5626 10.0459 13.6908 7.91763 13.6908 5.29231C13.6908 2.667 11.5626 0.538757 8.93724 0.538757C6.31192 0.538757 4.18369 2.667 4.18369 5.29231C4.18369 7.91763 6.31192 10.0459 8.93724 10.0459Z"
+              fill="white"
+            />
+          </g>
+        </svg>
+      </div>
+      <div class="action" onclick="showDiv()">
+        <svg
+          width="23"
+          height="26"
+          viewBox="0 0 23 26"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g opacity="0.6">
+            <path
+              d="M11.4915 11.3204L10.1595 8.99677V8.44918H10.6035C10.7811 8.44918 10.9365 8.42451 11.0697 8.37517C11.2078 8.32091 11.3213 8.24444 11.4101 8.14578C11.5038 8.04711 11.568 7.92871 11.6025 7.79058H10.1595V7.24298H11.5951C11.5655 7.11471 11.5137 7.00124 11.4397 6.90258C11.3706 6.80391 11.2769 6.72744 11.1585 6.67318C11.045 6.61398 10.9069 6.58438 10.7441 6.58438H10.1595V6.03678H13.4969V6.58438H12.3351C12.419 6.67811 12.488 6.77924 12.5423 6.88778C12.6015 6.99631 12.641 7.11471 12.6607 7.24298H13.4969V7.79058H12.6755C12.6262 8.15564 12.4856 8.44177 12.2537 8.64897C12.0218 8.85124 11.7234 8.98937 11.3583 9.06337L12.8087 11.3204H11.4915Z"
+              fill="white"
+            />
+            <path
+              d="M1.52234 2.31951C1.52234 1.56747 2.45575 1.21868 2.94892 1.78644V1.78644C3.53649 2.46289 4.56061 2.53642 5.2388 1.95085L5.34607 1.85823C6.00975 1.28519 6.99317 1.28519 7.65685 1.85823L7.74624 1.93541C8.46126 2.55279 9.52077 2.55279 10.2358 1.93541V1.93541C10.9508 1.31803 12.0103 1.31803 12.7254 1.93541V1.93541C13.4404 2.55279 14.4999 2.55279 15.2149 1.93541L15.3043 1.85823C15.968 1.28519 16.9514 1.28519 17.6151 1.85823L17.7224 1.95085C18.4005 2.53642 19.4247 2.46289 20.0122 1.78644V1.78644C20.5054 1.21868 21.4388 1.56747 21.4388 2.31951V22.0308C21.4388 23.1354 20.5434 24.0308 19.4388 24.0308H3.52234C2.41777 24.0308 1.52234 23.1354 1.52234 22.0308V2.31951Z"
+              stroke="white"
+              stroke-width="2"
+            />
+            <path
+              d="M4.89294 20.3151H12.3851M14.6137 20.3151H17.6011"
+              stroke="white"
+              stroke-width="2"
+            />
+            <path
+              d="M17.6011 16.6639H10.109M7.8803 16.6639H4.89294"
+              stroke="white"
+              stroke-width="2"
+            />
+          </g>
+        </svg>
+      </div>
+      <div
+        class="container2"
+        onclick="hideDiv()"
+        style="
+          position: absolute;
+          width: 100vw;
+          height: 100vh;
+          z-index: 10;
+          background-color: rgba(0, 0, 0, 0.5);
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          top: 0;
+          left: 0;
+        "
+      >
+        <div
+          id="balance"
+          style="
+            z-index: 100;
+            width: 75vw;
+            height: 20vh;
+            background-color: #131313;
+            border: 1px #fff solid;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1vh;
+          "
+        >
+          <p style="color: #fff; margin: 0">Your Balance:</p>
+          <h1 style="color: #fff; margin: 0">₹<%= user.balance %></h1>
         </div>
-        <div class="action" onclick="window.location.href = '/crypto'">
-            <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g opacity="0.6" clip-path="url(#clip0_433_2371)">
-                <path d="M23.3236 10.9439C23.0261 9.83384 22.2999 8.88736 21.3046 8.31272C20.3093 7.73809 19.1265 7.58237 18.0164 7.87982L17.4556 5.78698C17.3812 5.50945 17.1997 5.27283 16.9508 5.12917C16.702 4.98551 16.4063 4.94658 16.1288 5.02095C15.8513 5.09531 15.6146 5.27688 15.471 5.5257C15.3273 5.77453 15.2884 6.07023 15.3628 6.34775L15.9235 8.44059L13.8307 9.00137L13.2699 6.90853C13.1956 6.631 13.014 6.39438 12.7652 6.25072C12.5163 6.10706 12.2206 6.06813 11.9431 6.1425C11.6656 6.21686 11.429 6.39843 11.2853 6.64725C11.1416 6.89607 11.1027 7.19178 11.1771 7.4693L11.7379 9.56214L8.59859 10.4033C8.32106 10.4777 8.08444 10.6592 7.94078 10.9081C7.79713 11.1569 7.7582 11.4526 7.83256 11.7301C7.90692 12.0076 8.08849 12.2443 8.33731 12.3879C8.58614 12.5316 8.88184 12.5705 9.15937 12.4961L10.2058 12.2158L13.0097 22.68L11.9632 22.9603C11.6857 23.0347 11.4491 23.2163 11.3054 23.4651C11.1618 23.7139 11.1228 24.0096 11.1972 24.2871C11.2716 24.5647 11.4531 24.8013 11.702 24.945C11.9508 25.0886 12.2465 25.1275 12.524 25.0532L15.6633 24.212L16.224 26.3049C16.2984 26.5824 16.48 26.819 16.7288 26.9627C16.9776 27.1063 17.2733 27.1453 17.5509 27.0709C17.8284 26.9965 18.065 26.815 18.2087 26.5661C18.3523 26.3173 18.3912 26.0216 18.3169 25.7441L17.7561 23.6512L19.849 23.0905L20.4097 25.1833C20.4841 25.4608 20.6657 25.6975 20.9145 25.8411C21.1633 25.9848 21.459 26.0237 21.7365 25.9493C22.0141 25.875 22.2507 25.6934 22.3943 25.4446C22.538 25.1958 22.5769 24.9001 22.5026 24.6225L21.9418 22.5297C22.7882 22.2971 23.5441 21.8128 24.1092 21.1411C24.6744 20.4694 25.0222 19.6419 25.1067 18.7681C25.1911 17.8944 25.0082 17.0156 24.5821 16.2481C24.156 15.4806 23.5069 14.8606 22.7207 14.4701C23.0664 13.9592 23.299 13.3803 23.403 12.7722C23.507 12.1641 23.4799 11.5408 23.3236 10.9439ZM21.381 20.4369L15.1025 22.1192L13.9809 17.9335L20.2595 16.2512C20.8145 16.1024 21.4059 16.1803 21.9036 16.4676C22.4012 16.7549 22.7644 17.2282 22.9131 17.7832C23.0618 18.3383 22.9839 18.9297 22.6966 19.4273C22.4093 19.925 21.9361 20.2881 21.381 20.4369ZM19.6987 14.1583L13.4202 15.8407L12.2986 11.655L18.5771 9.97266C19.1322 9.82393 19.7236 9.90179 20.2212 10.1891C20.7189 10.4764 21.082 10.9497 21.2308 11.5047C21.3795 12.0598 21.3016 12.6512 21.0143 13.1488C20.727 13.6465 20.2537 14.0096 19.6987 14.1583Z" fill="white"/>
-                </g>
-                <defs>
-                <clipPath id="clip0_433_2371">
-                <rect width="26" height="26" fill="white" transform="translate(0.918137 6.85352) rotate(-15)"/>
-                </clipPath>
-                </defs>
-                </svg>                              
-        </div>
-        <div class="action" onclick="window.location.href = '/family'">
-            <svg width="30" height="21" viewBox="0 0 30 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g opacity="0.6">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M25.9457 15.2358H20.8146C19.3181 15.2358 18.1049 16.449 18.1049 17.9455V19.4048H28.6555V17.9455C28.6555 16.449 27.4423 15.2358 25.9457 15.2358ZM20.8146 13.8912C18.5755 13.8912 16.7604 15.7064 16.7604 17.9455V19.868C16.7604 20.3548 17.155 20.7494 17.6417 20.7494H29.1186C29.6054 20.7494 30 20.3548 30 19.868V17.9455C30 15.7064 28.1848 13.8912 25.9457 13.8912H20.8146Z" fill="white"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M23.3802 11.1385C24.6651 11.1385 25.7068 10.0969 25.7068 8.81195C25.7068 7.52701 24.6651 6.48536 23.3802 6.48536C22.0952 6.48536 21.0536 7.52701 21.0536 8.81195C21.0536 10.0969 22.0952 11.1385 23.3802 11.1385ZM23.3802 12.4831C25.4077 12.4831 27.0513 10.8395 27.0513 8.81195C27.0513 6.78443 25.4077 5.14081 23.3802 5.14081C21.3527 5.14081 19.709 6.78443 19.709 8.81195C19.709 10.8395 21.3527 12.4831 23.3802 12.4831Z" fill="white"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2593 13.6101H5.6153C3.67752 13.6101 2.10665 15.181 2.10665 17.1188V19.0084H15.7679V17.1188C15.7679 15.181 14.1971 13.6101 12.2593 13.6101ZM5.6153 11.8691C2.716 11.8691 0.365662 14.2195 0.365662 17.1188V19.6082C0.365662 20.2385 0.876606 20.7494 1.50689 20.7494H16.3677C16.998 20.7494 17.5089 20.2385 17.5089 19.6082V17.1188C17.5089 14.2195 15.1586 11.8691 12.2593 11.8691H5.6153Z" fill="white"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.93724 8.30488C10.601 8.30488 11.9498 6.95611 11.9498 5.29231C11.9498 3.62852 10.601 2.27974 8.93724 2.27974C7.27344 2.27974 5.92467 3.62852 5.92467 5.29231C5.92467 6.95611 7.27344 8.30488 8.93724 8.30488ZM8.93724 10.0459C11.5626 10.0459 13.6908 7.91763 13.6908 5.29231C13.6908 2.667 11.5626 0.538757 8.93724 0.538757C6.31192 0.538757 4.18369 2.667 4.18369 5.29231C4.18369 7.91763 6.31192 10.0459 8.93724 10.0459Z" fill="white"/>
-                </g>
-                </svg>                
-        </div>
-        <div class="action">
-            <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g opacity="0.6">
-                <path d="M11.4915 11.3204L10.1595 8.99677V8.44918H10.6035C10.7811 8.44918 10.9365 8.42451 11.0697 8.37517C11.2078 8.32091 11.3213 8.24444 11.4101 8.14578C11.5038 8.04711 11.568 7.92871 11.6025 7.79058H10.1595V7.24298H11.5951C11.5655 7.11471 11.5137 7.00124 11.4397 6.90258C11.3706 6.80391 11.2769 6.72744 11.1585 6.67318C11.045 6.61398 10.9069 6.58438 10.7441 6.58438H10.1595V6.03678H13.4969V6.58438H12.3351C12.419 6.67811 12.488 6.77924 12.5423 6.88778C12.6015 6.99631 12.641 7.11471 12.6607 7.24298H13.4969V7.79058H12.6755C12.6262 8.15564 12.4856 8.44177 12.2537 8.64897C12.0218 8.85124 11.7234 8.98937 11.3583 9.06337L12.8087 11.3204H11.4915Z" fill="white"/>
-                <path d="M1.52234 2.31951C1.52234 1.56747 2.45575 1.21868 2.94892 1.78644V1.78644C3.53649 2.46289 4.56061 2.53642 5.2388 1.95085L5.34607 1.85823C6.00975 1.28519 6.99317 1.28519 7.65685 1.85823L7.74624 1.93541C8.46126 2.55279 9.52077 2.55279 10.2358 1.93541V1.93541C10.9508 1.31803 12.0103 1.31803 12.7254 1.93541V1.93541C13.4404 2.55279 14.4999 2.55279 15.2149 1.93541L15.3043 1.85823C15.968 1.28519 16.9514 1.28519 17.6151 1.85823L17.7224 1.95085C18.4005 2.53642 19.4247 2.46289 20.0122 1.78644V1.78644C20.5054 1.21868 21.4388 1.56747 21.4388 2.31951V22.0308C21.4388 23.1354 20.5434 24.0308 19.4388 24.0308H3.52234C2.41777 24.0308 1.52234 23.1354 1.52234 22.0308V2.31951Z" stroke="white" stroke-width="2"/>
-                <path d="M4.89294 20.3151H12.3851M14.6137 20.3151H17.6011" stroke="white" stroke-width="2"/>
-                <path d="M17.6011 16.6639H10.109M7.8803 16.6639H4.89294" stroke="white" stroke-width="2"/>
-                </g>
-                </svg>                
-        </div>
+      </div>
     </div>
-    <img src="cards.png" alt="" class="cardsImg">
+    <img src="cards.png" alt="" class="cardsImg" />
     <script>
-        function cardAnimation(e) {
-            const myclass = e.target.className
-            if (myclass == 'card1') {
-                const temp1 = document.getElementsByClassName('card1')[0]
-                const temp2 = document.getElementsByClassName('card2')[0]
-                const temp3 = document.getElementsByClassName('card3')[0]
-                temp2.className = 'card3'
-                console.log('a')
-                temp1.className = 'card2'
-                console.log('b')
-                temp3.className = 'card1'
-                console.log('c')
-            }
-            if (myclass == 'card3') {
-                const temp1 = document.getElementsByClassName('card1')[0]
-                const temp2 = document.getElementsByClassName('card2')[0]
-                const temp3 = document.getElementsByClassName('card3')[0]
-                temp2.className = 'card1'
-                console.log('a')
-                temp1.className = 'card3'
-                console.log('b')
-                temp3.className = 'card2'
-                console.log('c')
-            }
+      function cardAnimation(e) {
+        const myclass = e.target.className;
+        if (myclass == "card1") {
+          const temp1 = document.getElementsByClassName("card1")[0];
+          const temp2 = document.getElementsByClassName("card2")[0];
+          const temp3 = document.getElementsByClassName("card3")[0];
+          temp2.className = "card3";
+          console.log("a");
+          temp1.className = "card2";
+          console.log("b");
+          temp3.className = "card1";
+          console.log("c");
         }
+        if (myclass == "card3") {
+          const temp1 = document.getElementsByClassName("card1")[0];
+          const temp2 = document.getElementsByClassName("card2")[0];
+          const temp3 = document.getElementsByClassName("card3")[0];
+          temp2.className = "card1";
+          console.log("a");
+          temp1.className = "card3";
+          console.log("b");
+          temp3.className = "card2";
+          console.log("c");
+        }
+      }
+      function showDiv() {
+        document.getElementsByClassName("container2")[0].style.display = "flex";
+      }
+      function hideDiv() {
+        document.getElementsByClassName("container2")[0].style.display = "none";
+      }
     </script>
-</body>
+  </body>
 </html>

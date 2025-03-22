@@ -32,7 +32,38 @@ router.get("/:id", async (req, res) => {
   res.render("pay", {
     user: req.user,
     payee: payee,
+    error: "",
   });
+});
+
+router.post("/pay/:id", async (req, res) => {
+  if (!req.user) return res.redirect("/login");
+  const { amount } = req.body;
+  console.log(amount);
+  const payee = await User.findById(req.params.id);
+  console.log(payee);
+
+  if (!amount) {
+    return res.render("pay", {
+      user: req.user,
+      payee: payee,
+      error: "Please enter an amount.",
+    });
+  }
+  if (req.user.balance < amount) {
+    return res.render("pay", {
+      user: req.user,
+      payee: payee,
+      error: "Insufficient balance.",
+    });
+  }
+  if (payee) {
+    req.user.balance -= amount;
+    payee.balance += parseInt(amount);
+    await req.user.save();
+    await payee.save();
+    return res.redirect("/");
+  }
 });
 
 module.exports = router;
