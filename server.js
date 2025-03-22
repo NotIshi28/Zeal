@@ -20,6 +20,7 @@ const indexRouter = require("./routers/indexRouter"),
   familyRouter = require("./routers/familyRouter"),
   emergencyRouter = require("./routers/emergencyRouter"),
   qrCodeRouter = require("./routers/qrCodeRouter"),
+  categoryRouter = require("./routers/categoryRouter"),
   regRouter = require("./routers/regRouter");
 
 app.use(express.static("public"));
@@ -47,6 +48,7 @@ app.use("/profile", ensureAuthenticated, profileRouter);
 app.use("/emergency", ensureAuthenticated, emergencyRouter);
 app.use("/family", ensureAuthenticated, familyRouter);
 app.use("/qrcode", ensureAuthenticated, qrCodeRouter);
+app.use("/transactions", ensureAuthenticated, categoryRouter);
 app.use("/register", forwardAuthenticated, regRouter);
 app.get("/logout", (req, res) => {
   req.logout((err) => {

@@ -1,5 +1,7 @@
 const router = require("express").Router(),
-  User = require("../schemas/userSchema");
+  User = require("../schemas/userSchema"),
+  Transcaton = require("../schemas/transactionSchema"),
+  bcrypt = require("bcrypt");
 
 router.get("/", (req, res) => {
   if (!req.user) return res.redirect("/login");
@@ -38,11 +40,27 @@ router.get("/:id", async (req, res) => {
 
 router.post("/pay/:id", async (req, res) => {
   if (!req.user) return res.redirect("/login");
-  const { amount } = req.body;
-  console.log(amount);
+  const { amount, password, category } = req.body;
+  console.log(category);
   const payee = await User.findById(req.params.id);
   console.log(payee);
 
+  bcrypt.compare(password, req.user.password).then((match) => {
+    if (!match) {
+      return res.render("pay", {
+        user: req.user,
+        payee: payee,
+        error: "Incorrect password.",
+      });
+    }
+  });
+  if (!password) {
+    return res.render("pay", {
+      user: req.user,
+      payee: payee,
+      error: "Please enter your password.",
+    });
+  }
   if (!amount) {
     return res.render("pay", {
       user: req.user,
@@ -57,6 +75,14 @@ router.post("/pay/:id", async (req, res) => {
       error: "Insufficient balance.",
     });
   }
+  const newTransaction = new Transcaton({
+    sender: req.user._id,
+    receiver: payee._id,
+    receiverName: payee.fname + " " + payee.lname,
+    amount: amount,
+    category: category,
+  });
+  await newTransaction.save();
   if (payee) {
     req.user.balance -= amount;
     payee.balance += parseInt(amount);

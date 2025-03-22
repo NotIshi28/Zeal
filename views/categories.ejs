@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transactions</title>
+    <style>
+      * {
+        color: #fff;
+        margin: 0;
+      }
+      .transaction {
+        display: flex;
+        justify-content: space-between;
+        width: 70vw;
+        margin: 5vw;
+      }
+      .transaction > p {
+        font-size: 1.2em;
+      }
+      .category {
+        margin-top: 4vh;
+      }
+      h1 {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('./partials/search') %> <%- include('./partials/navbar') %>
+
+    <div class="food category">
+      <h1>Food</h1>
+
+      <div class="transactions">
+        <% for (let i = 0; i < food.length; i++) { %>
+        <div class="transaction">
+          <p><%= food[i].receiverName %></p>
+          <p><%= food[i].amount %></p>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+    <div class="travel category">
+      <h1>Travel</h1>
+
+      <div class="transactions">
+        <% for (let i = 0; i < travel.length; i++) { %>
+        <div class="transaction">
+          <p><%= travel[i].receiverName %></p>
+          <p><%= travel[i].amount %></p>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+    <div class="shopping category">
+      <h1>Shopping</h1>
+
+      <div class="transactions">
+        <% for (let i = 0; i < shopping.length; i++) { %>
+        <div class="transaction">
+          <p><%= shopping[i].receiverName %></p>
+          <p><%= shopping[i].amount %></p>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+    <div class="education category">
+      <h1>Education</h1>
+
+      <div class="transactions">
+        <% for (let i = 0; i < education.length; i++) { %>
+        <div class="transaction">
+          <p><%= education[i].receiverName %></p>
+          <p><%= education[i].amount %></p>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+    <div class="rent category">
+      <h1>Rent</h1>
+
+      <div class="transactions">
+        <% for (let i = 0; i < rent.length; i++) { %>
+        <div class="transaction">
+          <p><%= rent[i].receiverName %></p>
+          <p><%= rent[i].amount %></p>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+    <div class="personalPayments category">
+      <h1>Personal Payments</h1>
+
+      <div class="transactions">
+        <% for (let i = 0; i < personalPayments.length; i++) { %>
+        <div class="transaction">
+          <p><%= personalPayments[i].receiverName %></p>
+          <p><%= personalPayments[i].amount %></p>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+    <div class="other category">
+      <h1>Other</h1>
+
+      <div class="transactions">
+        <% for (let i = 0; i < others.length; i++) { %>
+        <div class="transaction">
+          <p><%= others[i].receiverName %></p>
+          <p><%= others[i].amount %></p>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
